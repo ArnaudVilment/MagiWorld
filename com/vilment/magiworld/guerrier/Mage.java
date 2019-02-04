@@ -2,24 +2,39 @@ package com.vilment.magiworld.guerrier;
 
 public class Mage extends Personnage {
 
-    private int coupBasique;
-    private int coupSpecial;
+    private String coupBasique = "Boule de Feu";
+    private String couSpecial = "Soin";
+    private int vieDepart = 0;
 
-    public Mage() {
+    public Mage(String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-    }
-    public Mage(int niveau, int force, int agilite, int intelligence) {
-
-        super(niveau, force, agilite, intelligence);
-        this.coupBasique = intelligence;
-        this.coupSpecial = intelligence * 2;
+        super(nom, typePersonnage, niveau, force, agilite, intelligence);
+        vieDepart = getVie();
     }
 
-    public int coupBasique() {
+    public int attackBasique(){
+        return getIntelligence();
+    }
+
+    public int attackSpecial() {
+        int vie = 0;
+        if(getVie() + getIntelligence() * 2 <= vieDepart) {
+            vie = getVie() + getIntelligence() * 2;
+            setVie(vie);
+            return getIntelligence() * 2;
+        } else {
+            int vieAvant = getVie();
+            vie = vieDepart;
+            setVie(vie);
+            return vieDepart - vieAvant;
+        }
+    }
+
+    public String getCoupBasique() {
         return coupBasique;
     }
 
-    public void setCoupSpecial() {
-        setVie(getVie() + coupSpecial);
+    public String getCouSpecial() {
+        return couSpecial;
     }
 }
