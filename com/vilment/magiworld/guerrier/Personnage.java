@@ -2,6 +2,7 @@ package com.vilment.magiworld.guerrier;
 
 public abstract class Personnage {
 
+    private String nom1;
     private String nom;
     private int typePersonnage;
     private int niveau;
@@ -10,11 +11,9 @@ public abstract class Personnage {
     private int agilite;
     private int intelligence;
 
-    public Personnage() {
+    public Personnage(String nom1, String nom, int typePersonnage, int niveau,int force, int agilite, int intelligence) {
 
-    }
-
-    public Personnage(String nom, int typePersonnage, int niveau,int force, int agilite, int intelligence) {
+        this.nom1 = nom1;
         this.nom = nom;
         this.typePersonnage = typePersonnage;
         this.niveau = niveau;
@@ -63,5 +62,14 @@ public abstract class Personnage {
 
     public String getNom() {
         return nom;
+    }
+
+
+    public String getNom1() {
+        return nom1;
+    }
+
+    public void setNom1(String nom1) {
+        this.nom1 = nom1;
     }
 }

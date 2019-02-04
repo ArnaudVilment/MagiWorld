@@ -5,11 +5,10 @@ public class Rodeur extends Personnage {
     private String coupBasique = "Tir à l’Arc";
     private String couSpecial = "Concentration";
 
-    public Rodeur(String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
+    public Rodeur(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-        super(nom, typePersonnage, niveau, force, agilite, intelligence);
+        super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
     }
-
 
     public int attackBasique(){
         return getAgilite();

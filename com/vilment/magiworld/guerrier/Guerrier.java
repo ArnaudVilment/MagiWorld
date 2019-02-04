@@ -6,9 +6,9 @@ public class Guerrier extends Personnage {
     private String couSpecial = "Coup de Rage";
     private int viePerdu = 0;
 
-    public Guerrier(String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
+    public Guerrier(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-        super(nom, typePersonnage, niveau, force, agilite, intelligence);
+        super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
     }
 
     public int attackBasique(){

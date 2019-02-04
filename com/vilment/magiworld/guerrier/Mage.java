@@ -6,9 +6,9 @@ public class Mage extends Personnage {
     private String couSpecial = "Soin";
     private int vieDepart = 0;
 
-    public Mage(String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
+    public Mage(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
-        super(nom, typePersonnage, niveau, force, agilite, intelligence);
+        super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
         vieDepart = getVie();
     }
 
