@@ -10,6 +10,7 @@ public class Rodeur extends Personnage {
         super(nom, typePersonnage, niveau, force, agilite, intelligence);
     }
 
+
     public int attackBasique(){
         return getAgilite();
     }
