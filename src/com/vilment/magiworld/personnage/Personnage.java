@@ -25,6 +25,9 @@ public abstract class Personnage {
         this.intelligence = intelligence;
     }
 
+    public abstract void infoTypeJoueur(int compteurJoueur);
+    public abstract void infoChoixAttaqueJoueur(int compteurJoueur);
+
     public abstract int attackBasique();
     public abstract int attackSpecial();
     public abstract String getCoupBasique();

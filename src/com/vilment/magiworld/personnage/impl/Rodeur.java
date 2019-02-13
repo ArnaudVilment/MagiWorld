@@ -12,6 +12,15 @@ public class Rodeur extends Personnage {
         super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
     }
 
+    public void infoTypeJoueur(int compteurJoueur) {
+        System.out.println("Rrrrr je suis le Rôdeur Joueur" + compteurJoueur + " , niveau " + getNiveau() + ", vitalité " + getVie() + ", force " + getForce()
+                + ", agilité " + getAgilite() + ", intelligence " + getIntelligence() + " !");
+    }
+
+    public void infoChoixAttaqueJoueur(int compteurJoueur) {
+        System.out.println(getNom1() + "Joueur " + compteurJoueur + " vie (" + getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
+    }
+
     @Override
     public int attackBasique(){
         return getAgilite();

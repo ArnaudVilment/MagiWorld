@@ -8,7 +8,7 @@ import com.vilment.magiworld.personnage.Personnage;
  *
  */
 
-public class Guerrier extends Personnage{
+public class Guerrier extends Personnage {
 
     private String coupBasique = "Coup d'Epée";
     private String couSpecial = "Coup de Rage";
@@ -17,6 +17,15 @@ public class Guerrier extends Personnage{
     public Guerrier(String nom1, String nom, int typePersonnage, int niveau, int force, int agilite, int intelligence) {
 
         super(nom1, nom, typePersonnage, niveau, force, agilite, intelligence);
+    }
+
+    public void infoTypeJoueur(int compteurJoueur) {
+        System.out.println("Woarg je suis le Guerrier Joueur" + compteurJoueur + " , niveau " + getNiveau() + ", vitalité " + getVie() + ", force " + getForce()
+                + ", agilité " + getAgilite() + ", intelligence " + getIntelligence() + " !");
+    }
+
+    public void infoChoixAttaqueJoueur(int compteurJoueur) {
+        System.out.println(getNom1() + "Joueur " + compteurJoueur + " vie (" + getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
     }
 
     @Override

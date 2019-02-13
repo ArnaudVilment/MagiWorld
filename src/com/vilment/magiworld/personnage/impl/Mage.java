@@ -14,6 +14,15 @@ public class Mage extends Personnage {
         vieDepart = getVie();
     }
 
+    public void infoTypeJoueur(int compteurJoueur) {
+        System.out.println("Abracadabra je suis le Mage Joueur" + compteurJoueur + " , niveau " + getNiveau() + ", vitalité " + getVie() + ", force " + getForce()
+                + ", agilité " + getAgilite() + ", intelligence " + getIntelligence() + " !");
+    }
+
+    public void infoChoixAttaqueJoueur(int compteurJoueur) {
+        System.out.println(getNom1() + "Joueur " + compteurJoueur + " vie (" + getVie() + " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
+    }
+
     @Override
     public int attackBasique(){
         return getIntelligence();
