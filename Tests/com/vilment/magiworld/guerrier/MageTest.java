@@ -1,9 +1,11 @@
 package com.vilment.magiworld.guerrier;
 
+import com.vilment.magiworld.personnage.Personnage;
+import com.vilment.magiworld.personnage.impl.Mage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MageTest extends Personnage {
+public abstract class MageTest extends Personnage {
 
     @Test
     public void attackBasiqueTest() {
@@ -34,6 +36,8 @@ public class MageTest extends Personnage {
         Mage joueur = new Mage("joueur1", "joueur1", 1, 20, 0, 0, 20);
         Assertions.assertEquals(joueur.getCoupSpecial(),   "Soin");
     }
+
+    public abstract void info(int compteurJoueur);
 
     @Override
     public int attackBasique() {

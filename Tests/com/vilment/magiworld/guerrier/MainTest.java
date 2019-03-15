@@ -1,10 +1,21 @@
 package com.vilment.magiworld.guerrier;
 
 import com.vilment.magiworld.Main;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import com.vilment.magiworld.exception.ExceptionSaisie;
+import org.junit.jupiter.api.*;
 
 public class MainTest {
+
+    @BeforeEach
+    public void avant(){
+        System.out.println("avant le test :");
+    }
+
+
+    @AfterEach
+    public void apres(){
+        System.out.println("Après le test :");
+    }
 
     /*
      * Tests de la méthode testDonnee
@@ -47,16 +58,26 @@ public class MainTest {
      */
     @Test
     public void testAttaqueOK1() {
-        Assertions.assertTrue(Main.testAttaque(1));
+        //Assertions.assertTrue(Main.testChoixAttaque(1));
     }
 
     @Test
     public void testAttaqueOK2() {
-        Assertions.assertTrue(Main.testAttaque(2));
+        //Assertions.assertTrue(Main.testChoixAttaque(2));
     }
 
     @Test
     public void testAttaqueKO() {
-        Assertions.assertFalse(Main.testAttaque(5));
+        //Assertions.assertFalse(Main.testChoixAttaque(5));
+    }
+
+    @Test
+    public void controleKoExceptionSaisi(){
+            Assertions.assertThrows(ExceptionSaisie.class, () -> Main.testControleSaisiEntier("m"));
+    }
+
+    @Test
+    public void controleOk() throws ExceptionSaisie{
+        Assertions.assertEquals(1, Main.testControleSaisiEntier("1"));
     }
 }
